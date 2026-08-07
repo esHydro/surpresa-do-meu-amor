@@ -1,0 +1,1347 @@
+/* ===========================================================
+   UMA NOITE PARA LUA
+   STYLE.CSS
+   PARTE 1
+=========================================================== */
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    color:#fff;
+    background:#050816;
+}
+
+/* ===========================
+   VARIÁVEIS
+=========================== */
+
+:root{
+
+    --bg:#050816;
+    --bg2:#0D1636;
+
+    --primary:#E8D6FF;
+    --secondary:#8EC5FF;
+    --gold:#FFD98A;
+
+    --white:#FFFFFF;
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.18);
+
+    --shadow:0 25px 60px rgba(0,0,0,.35);
+
+    --radius:24px;
+
+    --transition:.45s ease;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-5;
+
+    background:
+    linear-gradient(
+        180deg,
+        #050816 0%,
+        #09142b 45%,
+        #132650 100%
+    );
+
+}
+
+/* ===========================
+   ESTRELAS
+=========================== */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,#fff 1px,transparent 1px);
+
+    background-size:90px 90px;
+
+    opacity:.35;
+
+    animation:twinkle 6s infinite alternate;
+
+}
+
+/* ===========================
+   LUA
+=========================== */
+
+.moon{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    right:8%;
+
+    top:70px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(circle at 30% 30%,
+
+        #ffffff,
+
+        #f6f3ff 35%,
+
+        #ddd5ff 65%,
+
+        #cbc2ff 100%);
+
+    box-shadow:
+
+        0 0 70px rgba(255,255,255,.45),
+
+        0 0 120px rgba(200,180,255,.25);
+
+    animation:moonFloat 6s ease-in-out infinite;
+
+}
+
+/* ===========================
+   BRILHO DA LUA
+=========================== */
+
+.moon-glow{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    right:-120px;
+
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(180,160,255,.18),
+
+            transparent 70%
+
+        );
+
+    filter:blur(35px);
+
+}
+
+/* ===========================
+   PARTÍCULAS
+=========================== */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    background:#050816;
+
+    z-index:9999;
+
+}
+
+.loading-content{
+
+    text-align:center;
+
+    max-width:500px;
+
+    padding:40px;
+
+}
+
+.loading-content h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+.loading-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.5rem;
+
+    margin-bottom:10px;
+
+}
+
+.loading-content p{
+
+    color:rgba(255,255,255,.7);
+
+    margin-bottom:30px;
+
+}
+
+.loading-bar{
+
+    width:320px;
+
+    height:8px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    margin:30px auto 0;
+
+}
+
+.loading-bar span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    animation:loading 4s forwards;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+#hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.hero-content{
+
+    width:min(850px,100%);
+
+    padding:60px;
+
+    border-radius:var(--radius);
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--glass-border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+.hero-content h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:5rem;
+
+    margin-bottom:10px;
+
+}
+
+.hero-content h2{
+
+    font-family:'Dancing Script',cursive;
+
+    color:var(--primary);
+
+    font-size:2.4rem;
+
+    margin-bottom:30px;
+
+}
+
+.hero-content p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:2;
+
+    color:rgba(255,255,255,.82);
+
+}
+
+#startButton{
+
+    margin-top:40px;
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:#111;
+
+    font-weight:700;
+
+    font-size:1rem;
+
+    transition:var(--transition);
+
+}
+
+#startButton:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(170,170,255,.35);
+
+}
+
+/* ===========================
+   SEÇÕES
+=========================== */
+
+.section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:120px 30px;
+
+}
+
+.container{
+
+    width:min(1100px,100%);
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    color:var(--gold);
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+    text-transform:uppercase;
+
+}
+
+.section h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3.2rem;
+
+    margin-bottom:30px;
+
+}
+
+.section p{
+
+    line-height:2;
+
+    color:rgba(255,255,255,.82);
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+
+@keyframes moonFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.18;
+    }
+
+    to{
+        opacity:.45;
+    }
+
+}
+
+@keyframes loading{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+/* ===========================================================
+   CARTA
+=========================================================== */
+
+#letter{
+    position:relative;
+}
+
+.envelope{
+    position:relative;
+    width:min(800px,100%);
+    margin:60px auto 0;
+    perspective:1200px;
+}
+
+.envelope-front{
+
+    background:linear-gradient(
+        145deg,
+        #fff8ef,
+        #f0e4d3
+    );
+
+    color:#3d2d1f;
+
+    border-radius:18px;
+
+    padding:60px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.envelope-front:hover{
+
+    transform:
+        rotateX(8deg)
+        translateY(-8px);
+
+}
+
+.envelope-front span{
+
+    font-size:4rem;
+
+    display:block;
+
+    margin-bottom:20px;
+
+}
+
+.envelope-front p{
+
+    color:#5f4b39;
+
+    font-weight:600;
+
+}
+
+.letter-paper{
+
+    display:none;
+
+    margin-top:30px;
+
+    background:#fffdf8;
+
+    color:#353535;
+
+    border-radius:20px;
+
+    padding:60px;
+
+    box-shadow:var(--shadow);
+
+    line-height:2;
+
+    animation:fadeLetter .8s;
+
+}
+
+.letter-paper h3{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:2.8rem;
+
+    color:#5f437d;
+
+    margin-bottom:25px;
+
+}
+
+.signature{
+
+    margin-top:40px;
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:2rem;
+
+    color:#714aa3;
+
+}
+
+/* ===========================================================
+   GALERIA
+=========================================================== */
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:45px;
+
+    margin-top:70px;
+
+}
+
+.photo-card{
+
+    background:#ffffff;
+
+    color:#333;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.30);
+
+    transition:.45s;
+
+    position:relative;
+
+}
+
+.photo-card:nth-child(1){
+
+    transform:rotate(-3deg);
+
+}
+
+.photo-card:nth-child(2){
+
+    transform:rotate(2deg);
+
+}
+
+.photo-card:nth-child(3){
+
+    transform:rotate(-2deg);
+
+}
+
+.photo-card:nth-child(4){
+
+    transform:rotate(3deg);
+
+}
+
+.photo-card:hover{
+
+    transform:
+        translateY(-15px)
+        rotate(0deg)
+        scale(1.04);
+
+}
+
+.photo-card img{
+
+    width:100%;
+
+    border-radius:8px;
+
+    display:block;
+
+}
+
+.photo-card h3{
+
+    margin:18px 0 10px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+}
+
+.photo-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+/* ===========================================================
+   LINHA DO TEMPO
+=========================================================== */
+
+.timeline{
+
+    margin-top:80px;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    background:linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+    transform:translateX(-50%);
+
+}
+
+.timeline-item{
+
+    width:45%;
+
+    padding:30px;
+
+    margin-bottom:50px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.timeline-item:nth-child(even){
+
+    margin-left:auto;
+
+}
+
+.timeline-item span{
+
+    font-size:2.4rem;
+
+}
+
+.timeline-item h3{
+
+    margin:15px 0;
+
+    font-size:1.6rem;
+
+}
+
+.timeline-item p{
+
+    margin:0;
+
+}
+
+/* ===========================================================
+   TRANSIÇÕES
+=========================================================== */
+
+.photo-card,
+.timeline-item,
+.envelope-front{
+
+    transition:.45s ease;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.envelope.open .envelope-front{
+
+    display:none;
+
+}
+
+.envelope.open .letter-paper{
+
+    display:block;
+
+}
+
+/* ===========================================================
+   ANIMAÇÕES
+=========================================================== */
+
+@keyframes fadeLetter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ===========================================================
+   CONSTELAÇÃO
+=========================================================== */
+
+#constellation{
+    position:relative;
+    text-align:center;
+}
+
+.section-description{
+    opacity:.8;
+    margin-bottom:50px;
+}
+
+.constellation-map{
+
+    position:relative;
+
+    width:min(850px,100%);
+    height:500px;
+
+    margin:60px auto;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:1.6rem;
+
+    cursor:pointer;
+
+    color:#FFD98A;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    transition:.35s;
+
+    box-shadow:0 0 25px rgba(255,217,138,.25);
+
+}
+
+.star:hover{
+
+    transform:scale(1.25);
+
+    box-shadow:
+        0 0 40px rgba(255,217,138,.7);
+
+}
+
+.star:nth-child(1){top:10%;left:18%;}
+.star:nth-child(2){top:28%;right:15%;}
+.star:nth-child(3){top:60%;left:25%;}
+.star:nth-child(4){top:48%;right:22%;}
+.star:nth-child(5){bottom:10%;left:45%;}
+.star:nth-child(6){top:8%;left:52%;}
+
+#starMessage{
+
+    margin-top:35px;
+
+    min-height:40px;
+
+    font-size:1.2rem;
+
+    color:var(--gold);
+
+    transition:.4s;
+
+}
+
+/* ===========================================================
+   PEDIDO
+=========================================================== */
+
+#proposal{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    text-align:center;
+
+}
+
+.proposal-box{
+
+    width:min(800px,100%);
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--glass-border);
+
+    padding:70px;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.question{
+
+    font-size:2.8rem;
+
+    color:var(--gold);
+
+    font-family:'Dancing Script',cursive;
+
+    margin:45px 0;
+
+}
+
+.proposal-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.proposal-buttons button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px 38px;
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+#yesButton{
+
+    background:linear-gradient(
+        135deg,
+        #ff8dc7,
+        #ff5c93
+    );
+
+    color:#fff;
+
+    box-shadow:0 15px 35px rgba(255,105,180,.35);
+
+}
+
+#yesButton:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.05);
+
+}
+
+#noButton{
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+#noButton:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ===========================================================
+   TELA FINAL
+=========================================================== */
+
+#yesScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    radial-gradient(circle,
+    #162d66,
+    #09142b,
+    #050816);
+
+    z-index:9999;
+
+    text-align:center;
+
+    animation:fadeIn .8s;
+
+}
+
+#yesScreen.active{
+
+    display:flex;
+
+}
+
+.celebration{
+
+    width:min(850px,90%);
+
+    padding:50px;
+
+}
+
+.celebration h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    color:var(--gold);
+
+    margin-bottom:25px;
+
+}
+
+.celebration h2{
+
+    font-size:2rem;
+
+    margin-bottom:30px;
+
+}
+
+.celebration p{
+
+    line-height:2;
+
+    margin-bottom:25px;
+
+}
+
+.celebration h3{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:3rem;
+
+    color:#ffd8ef;
+
+}
+
+/* ===========================================================
+   FOOTER
+=========================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    opacity:.8;
+
+}
+
+footer strong{
+
+    color:var(--gold);
+
+}
+
+/* ===========================================================
+   ESTRELA CADENTE
+=========================================================== */
+
+.shooting-stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+
+    left:-120px;
+
+    width:220px;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        transparent
+    );
+
+    transform:rotate(35deg);
+
+    animation:shootingStar 8s linear infinite;
+
+    opacity:.7;
+
+}
+
+/* ===========================================================
+   RESPONSIVO
+=========================================================== */
+
+@media(max-width:900px){
+
+.hero-content{
+
+    padding:40px 25px;
+
+}
+
+.hero-content h1{
+
+    font-size:3.5rem;
+
+}
+
+.hero-content h2{
+
+    font-size:2rem;
+
+}
+
+.section h2{
+
+    font-size:2.4rem;
+
+}
+
+.timeline::before{
+
+    display:none;
+
+}
+
+.timeline-item{
+
+    width:100%;
+
+    margin-left:0!important;
+
+}
+
+.proposal-box{
+
+    padding:40px 25px;
+
+}
+
+.question{
+
+    font-size:2rem;
+
+}
+
+.celebration h1{
+
+    font-size:2.8rem;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-content h1{
+
+    font-size:2.8rem;
+
+}
+
+.hero-content h2{
+
+    font-size:1.7rem;
+
+}
+
+.loading-bar{
+
+    width:100%;
+
+}
+
+.proposal-buttons{
+
+    flex-direction:column;
+
+}
+
+.proposal-buttons button{
+
+    width:100%;
+
+}
+
+.star{
+
+    width:50px;
+
+    height:50px;
+
+}
+
+}
+
+/* ===========================================================
+   ANIMAÇÕES
+=========================================================== */
+
+@keyframes shootingStar{
+
+0%{
+
+transform:
+translate(-200px,-200px)
+rotate(35deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translate(1600px,900px)
+rotate(35deg);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}

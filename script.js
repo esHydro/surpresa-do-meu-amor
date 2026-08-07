@@ -461,7 +461,7 @@ iniciarEstrelasCadentes();
 
 iniciarParticulas();
 
-iniciarContadorNamoro();
+atualizarContador()
 
 
 const startButton = document.getElementById("startButton");

@@ -59,11 +59,35 @@ function iniciarMusica(){
 
     musica.volume = 0.35;
 
-    startButton.addEventListener("click", () => {
+startButton.addEventListener("click", () => {
 
-        musica.play().catch(err => console.error(err));
+    // Inicia a música
+    musica.play().catch(err => console.error(err));
 
-    }, { once: true });
+    // Faz o botão desaparecer
+    startButton.style.transition = "all .8s ease";
+    startButton.style.opacity = "0";
+    startButton.style.transform = "translateY(-15px) scale(.95)";
+    startButton.disabled = true;
+
+    // Cria a mensagem apenas uma vez
+    let mensagem = document.getElementById("startMessage");
+
+    if (!mensagem) {
+
+        mensagem = document.createElement("p");
+        mensagem.id = "startMessage";
+        mensagem.textContent = "✨ Nossa história está prestes a começar... ✨";
+
+        startButton.insertAdjacentElement("afterend", mensagem);
+
+        setTimeout(() => {
+            mensagem.classList.add("show");
+        }, 100);
+
+    }
+
+}, { once: true });
 
 }
 
@@ -378,6 +402,47 @@ function iniciarParticulas(){
 
 }
 
+function atualizarContador(){
+
+    // ALTERE PARA A DATA EM QUE VOCÊS SE CONHECERAM
+    const inicio = new Date("2026-07-06T22:19:00");
+
+    const agora = new Date();
+
+    let anos = agora.getFullYear() - inicio.getFullYear();
+    let meses = agora.getMonth() - inicio.getMonth();
+    let dias = agora.getDate() - inicio.getDate();
+
+    if(dias < 0){
+        meses--;
+        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
+        dias += ultimoMes.getDate();
+    }
+
+    if(meses < 0){
+        anos--;
+        meses += 12;
+    }
+
+    const horas = agora.getHours().toString().padStart(2,"0");
+    const minutos = agora.getMinutes().toString().padStart(2,"0");
+    const segundos = agora.getSeconds().toString().padStart(2,"0");
+
+    document.getElementById("loveCounter").innerHTML = `
+        ❤️ <strong>${anos}</strong> anos,
+        <strong>${meses}</strong> meses,
+        <strong>${dias}</strong> dias<br>
+
+        <strong>${horas}</strong> horas :
+        <strong>${minutos}</strong> minutos :
+        <strong>${segundos}</strong> segundos
+    `;
+}
+
+setInterval(atualizarContador,1000);
+
+atualizarContador();
+
 /* ==========================================================
    INICIALIZAÇÃO FINAL
 ========================================================== */
@@ -405,35 +470,31 @@ if (startButton) {
 
 startButton.addEventListener("click", () => {
 
-    // Inicia a música
+    // Toca a música
     musica.play().catch(err => console.error(err));
 
-    // Desabilita o botão para evitar vários cliques
+    // Impede novos cliques
     startButton.disabled = true;
 
-    // Efeito de desaparecimento
-    startButton.style.transition = "all .8s ease";
+    // Animação do botão
+    startButton.style.transition = "all 0.8s ease";
     startButton.style.opacity = "0";
-    startButton.style.transform = "scale(.9)";
+    startButton.style.transform = "translateY(-15px) scale(0.95)";
 
-    // Mensagem de início da jornada
+    // Cria a mensagem
     const mensagem = document.createElement("p");
 
-    mensagem.innerHTML = "✨ Nossa história está prestes a começar... ✨";
-    mensagem.style.marginTop = "25px";
-    mensagem.style.fontSize = "1.2rem";
-    mensagem.style.color = "#ffd8ec";
-    mensagem.style.opacity = "0";
-    mensagem.style.transition = "opacity 1.2s ease";
+    mensagem.className = "start-message";
+    mensagem.textContent = "✨ Nossa história está prestes a começar... ✨";
 
-    startButton.parentNode.appendChild(mensagem);
+    startButton.parentElement.appendChild(mensagem);
 
+    // Faz a mensagem aparecer
     setTimeout(() => {
-
-        mensagem.style.opacity = "1";
-
-    }, 300);
+        mensagem.classList.add("show");
+    }, 100);
 
 }, { once: true });
 
 }
+

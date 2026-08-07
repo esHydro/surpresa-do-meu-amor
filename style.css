@@ -1344,4 +1344,106 @@ opacity:1;
 
 }
 
+/* ==========================================
+   CONTADOR FINAL
+========================================== */
+
+#forever{
+
+    text-align:center;
+
+    padding:120px 20px;
+
+}
+
+#loveCounter{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#ffd6e7;
+
+    margin:35px 0;
+
+    line-height:1.8;
+
+}
+
+.final-text{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:1.15rem;
+
+    color:#d8d8d8;
+
+    opacity:.9;
+
+/* ==========================================
+   CONTADOR DO NAMORO
+========================================== */
+
+.dating-timer{
+
+    margin-top:60px;
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:all 1s ease;
+
+    text-align:center;
+
+}
+
+.dating-timer.show{
+
+    opacity:1;
+
+    max-height:500px;
+
+}
+
+.dating-timer h3{
+
+    color:#ffd6e7;
+
+    margin-bottom:20px;
+
+}
+
+.dating-subtitle{
+
+    color:#d8d8d8;
+
+    margin-bottom:20px;
+
+}
+
+#datingCounter{
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+    margin:20px 0;
+
+}
+
+.dating-message{
+
+    color:#ffd6e7;
+
+    opacity:.9;
+
+}
+
 }

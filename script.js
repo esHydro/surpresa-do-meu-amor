@@ -461,6 +461,8 @@ iniciarEstrelasCadentes();
 
 iniciarParticulas();
 
+iniciarContadorNamoro();
+
 
 const startButton = document.getElementById("startButton");
 const musica = document.getElementById("backgroundMusic");
